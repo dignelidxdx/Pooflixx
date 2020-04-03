@@ -40,7 +40,7 @@ public class Pooflix {
 		
 		this.agregarBreakingBAD();
 		this.agregarTheWalkingDead();
-
+	
 	}
 
 	public void agregarTheWalkingDead() {
@@ -88,6 +88,28 @@ public class Pooflix {
 
 		this.series.add(theWD);
 
+
+		Websodio sodio = new Websodio();
+		sodio.nombre = "A new day";
+		sodio.numero = 1;
+		sodio.duracion = 5;
+		sodio.url = "https://es.wikipedia.org/wiki/The_Walking_Dead:_Torn_Apart";
+		
+		temp3.capitulos.add(sodio);
+
+		sodio = new Websodio();
+		sodio.nombre = "Alone";
+		sodio.numero = 3;
+		sodio.duracion = 10;
+		sodio.url = "https://es.wikipedia.org/wiki/The_Walking_Dead:_Torn_Apart";
+		
+		temp3.capitulos.add(sodio);
+
+		theWD.temporadas.add(temp3);
+		 
+		this.series.add(theWD); 
+	
+
 	}
 
 	public void agregarBreakingBAD() {
@@ -117,8 +139,6 @@ public class Pooflix {
 		breakingB.temporadas.add(t5);
 		 
 		this.series.add(breakingB); 
-
-
 
 	}
 

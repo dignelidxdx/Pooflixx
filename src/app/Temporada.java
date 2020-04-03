@@ -14,6 +14,8 @@ public class Temporada {
     public List<Capitulo> capitulos = new ArrayList<>();
     public List<Serie> series1 = new ArrayList<>();
 
+
+
     public Capitulo getEpisodio(int nro) {
         for (Capitulo c : this.capitulos) {
 			if (c.numero == nro)
@@ -22,6 +24,7 @@ public class Temporada {
 		
 		return null;
     }
+
 	
 
     
