@@ -26,12 +26,20 @@ public class App {
 
 		System.out.println("Iniciando Catalogo"); 
 		miPooflix.inicializarCatalogo(); 
-		Serie bb = miPooflix.buscarSerie("Breaking Bad"); 
-		Temporada laMejorTemporada = bb.getTemporada(5); 
+		Serie bb = miPooflix.buscarSerie("The Walking Dead"); 
+		Temporada laMejorTemporada = bb.getTemporada(1); 
 		Capitulo elTop; 
-		elTop = laMejorTemporada.getEpisodio(7); 
+		elTop = laMejorTemporada.getEpisodio(1); 
+
+		Serie bb1 = miPooflix.buscarSerie("The Walking Dead");
+		Temporada laMejorTemporada1 = bb1.getTemporada(1);
+		Capitulo elTop1;
+		elTop1 = laMejorTemporada1.getEpisodio(3);
+
 
 		elTop.reproducir(); 
+		elTop1.reproducir(); 
+
 	
 	}  
 

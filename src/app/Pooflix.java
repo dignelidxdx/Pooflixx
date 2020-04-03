@@ -39,10 +39,58 @@ public class Pooflix {
 	public void inicializarCatalogo() {
 		
 		this.agregarBreakingBAD();
+		this.agregarTheWalkingDead();
 
 	}
 
-	public void agregarBreakingBAD(){
+	public void agregarTheWalkingDead() {
+
+		Serie theWD = new Serie();
+		theWD.titulo = "The Walking Dead";
+
+		Genero generoTWD = new Genero();
+		generoTWD.nombre = "horror";
+		theWD.generos.add(generoTWD);
+
+		Temporada temp1 = new Temporada();
+		temp1.numero = 1;
+		
+		Capitulo cap1 = new Capitulo();
+		cap1.numero = 1;
+		cap1.nombre = "Days Gone Bye";
+		cap1.duracion = 41;
+		temp1.capitulos.add(cap1);
+
+		Capitulo cap3 = new Capitulo();
+		cap3.numero = 3;
+		cap3.nombre = "Tell It To The Frogs";
+		cap3.duracion = 40;
+		temp1.capitulos.add(cap3);
+
+		theWD.temporadas.add(temp1);
+
+		Temporada temp3 = new Temporada();
+		temp3.numero = 3;
+
+		Capitulo cap4 = new Capitulo();
+		cap4.numero = 3;
+		cap4.nombre = "Walk With Me";
+		cap4.duracion = 47;
+		temp3.capitulos.add(cap4);
+
+		Capitulo cap5 = new Capitulo();
+		cap5.numero = 5;
+		cap5.nombre = "Say the Word";
+		cap5.duracion = 50;
+		temp3.capitulos.add(cap5);
+
+		theWD.temporadas.add(temp3);
+
+		this.series.add(theWD);
+
+	}
+
+	public void agregarBreakingBAD() {
 
 		Serie breakingB = new Serie(); 
 		breakingB.titulo = "Breaking Bad";
@@ -69,6 +117,9 @@ public class Pooflix {
 		breakingB.temporadas.add(t5);
 		 
 		this.series.add(breakingB); 
+
+
+
 	}
 
 
