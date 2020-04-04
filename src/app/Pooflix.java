@@ -73,7 +73,7 @@ public class Pooflix {
 		temp3.numero = 3;
 
 		Capitulo cap4 = new Capitulo();
-		cap4.numero = 3;
+		cap4.numero = 4;
 		cap4.nombre = "Walk With Me";
 		cap4.duracion = 47;
 		temp3.capitulos.add(cap4);
@@ -99,7 +99,7 @@ public class Pooflix {
 
 		sodio = new Websodio();
 		sodio.nombre = "Alone";
-		sodio.numero = 3;
+		sodio.numero = 2;
 		sodio.duracion = 10;
 		sodio.url = "https://es.wikipedia.org/wiki/The_Walking_Dead:_Torn_Apart";
 		
