@@ -28,6 +28,16 @@ public class Film {
 	public List<String> premios = new ArrayList<>();
 	public List<Genero> generos = new ArrayList<>();
 	public List<Actor> actores = new ArrayList<>();
+
+	public Actor getActores(int numero) {
+		for (Actor act : this.actores) {
+			if (act.posicion == numero) {
+                return act;
+            }
+				
+		}
+        return null;
+	}
 	
 	public boolean visto(){
 		return true;		

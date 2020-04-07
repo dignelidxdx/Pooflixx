@@ -13,6 +13,11 @@ public class Pooflix {
 
 	public List<Pelicula> pelis = new ArrayList<>();
 	public List<Serie> series = new ArrayList<>();
+	
+
+	public Director getDirector() {
+		return null;
+	}
 
 	
 	public Film buscarPorTitulo(String titulo){		
@@ -29,6 +34,10 @@ public class Pooflix {
 	}
 
 	public Pelicula buscarPelicula(String titulo){
+		for (Pelicula p: this.pelis) {
+			if (p.titulo.equals(titulo))
+				return p;
+		}
 		return null;
 	}
 	
@@ -40,7 +49,35 @@ public class Pooflix {
 		
 		this.agregarBreakingBAD();
 		this.agregarTheWalkingDead();
-	
+		this.agregar1raPelicula();
+	}
+
+	private void agregar1raPelicula() {
+		
+		Pelicula elSenorDeLosAnillos = new Pelicula();
+		elSenorDeLosAnillos.titulo = "El senor de los anillos: La comunidad del anillo";
+		
+		Genero genero = new Genero();
+		genero.nombre = "fantasia";
+		elSenorDeLosAnillos.generos.add(genero);
+
+		Actor actor = new Actor();
+		actor.posicion = 1;
+		actor.name = "Ian McKellen";
+		actor.anio = 35;
+		elSenorDeLosAnillos.actores.add(actor);
+
+		Actor actor2 = new Actor();
+		actor2.posicion = 1;
+		actor2.name = "Elijah Wood";
+		actor2.anio = 40;
+		elSenorDeLosAnillos.actores.add(actor2);
+
+		Director director = new Director();
+		director.name = "Peter Jackson";
+
+
+		this.pelis.add(elSenorDeLosAnillos);
 	}
 
 	public void agregarTheWalkingDead() {
@@ -55,16 +92,10 @@ public class Pooflix {
 		Temporada temp1 = new Temporada();
 		temp1.numero = 1;
 		
-		Capitulo cap1 = new Capitulo();
-		cap1.numero = 1;
-		cap1.nombre = "Days Gone Bye";
-		cap1.duracion = 41;
+		Capitulo cap1 = new Capitulo(1, "Days Gone Bye", 41);
 		temp1.capitulos.add(cap1);
 
-		Capitulo cap3 = new Capitulo();
-		cap3.numero = 3;
-		cap3.nombre = "Tell It To The Frogs";
-		cap3.duracion = 40;
+		Capitulo cap3 = new Capitulo(3, "Tell It To The Frogs", 40);
 		temp1.capitulos.add(cap3);
 
 		theWD.temporadas.add(temp1);
@@ -72,16 +103,10 @@ public class Pooflix {
 		Temporada temp3 = new Temporada();
 		temp3.numero = 3;
 
-		Capitulo cap4 = new Capitulo();
-		cap4.numero = 4;
-		cap4.nombre = "Walk With Me";
-		cap4.duracion = 47;
+		Capitulo cap4 = new Capitulo(4, "Walk With Me", 47);
 		temp3.capitulos.add(cap4);
 
-		Capitulo cap5 = new Capitulo();
-		cap5.numero = 5;
-		cap5.nombre = "Say the Word";
-		cap5.duracion = 50;
+		Capitulo cap5 = new Capitulo(5, "Say the Word", 50);
 		temp3.capitulos.add(cap5);
 
 		theWD.temporadas.add(temp3);
@@ -89,20 +114,12 @@ public class Pooflix {
 		this.series.add(theWD);
 
 
-		Websodio sodio = new Websodio();
-		sodio.nombre = "A new day";
-		sodio.numero = 1;
-		sodio.duracion = 5;
-		sodio.url = "https://es.wikipedia.org/wiki/The_Walking_Dead:_Torn_Apart";
+		Websodio sodio = new Websodio(1, "A new day");
 		
 		temp3.capitulos.add(sodio);
 
-		sodio = new Websodio();
-		sodio.nombre = "Alone";
-		sodio.numero = 2;
-		sodio.duracion = 10;
-		sodio.url = "https://es.wikipedia.org/wiki/The_Walking_Dead:_Torn_Apart";
-		
+		sodio = new Websodio(2, "Alone");
+
 		temp3.capitulos.add(sodio);
 
 		theWD.temporadas.add(temp3);
@@ -141,6 +158,8 @@ public class Pooflix {
 		this.series.add(breakingB); 
 
 	}
+
+	
 
 
     

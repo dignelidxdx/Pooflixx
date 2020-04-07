@@ -4,6 +4,11 @@ public class Websodio extends Capitulo {
 
     public String url;
 
+    public Websodio(int numero, String nombre){
+        super(numero,nombre);
+        this.url = "http://movies.com";
+    }
+
     @Override 
     // Redefinicion
     public void reproducir(){

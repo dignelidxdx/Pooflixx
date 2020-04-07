@@ -20,5 +20,8 @@ public class Pelicula extends Film {
 	public boolean filmadaEnImax;
 	
 
-	
+	public void reproducir(){
+		System.out.println("Reproduciendo la pelicula: " + super.titulo + " Interpretado por: " + super.actores);
+
+	}
 }

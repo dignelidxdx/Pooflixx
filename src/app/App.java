@@ -23,26 +23,26 @@ public class App {
 	public static void main(String[] args) throws Exception {
 
 		Pooflix miPooflix = new Pooflix();
-
-		System.out.println("Iniciando Catalogo....");
-
+		iniciarCatalogo();
 		miPooflix.inicializarCatalogo();
 
+		Pelicula p = miPooflix.buscarPelicula("El senor de los anillos: La comunidad del anillo");
+		Actor losActores = p.getActores(1);
+		p.reproducir();
+
+		
+
+
+
 		Serie bb = miPooflix.buscarSerie("The Walking Dead");
-
 		Temporada laMejorTemporada = bb.getTemporada(3);
-
 		Capitulo epiDemo;
-
 		int posicion = 0;
 
 		/// En base a un numero de posicion de episodio, obtenerlo de la lista
 		System.out.println("Ingrese la posicion");
-
 		posicion = Teclado.nextInt();
-
 		epiDemo = laMejorTemporada.getEpisodioAtPosicion(posicion);
-
 		epiDemo.reproducir();
 
 		// instanceof: devuelve si la variable es de tipo Clase X
@@ -61,17 +61,18 @@ public class App {
 			System.out.println("Estoy reproduciendo un Episodio");
 
 		Capitulo elTop;
-
 		elTop = laMejorTemporada.getEpisodio(1);
-
 		elTop.reproducir();
-
 		Capitulo otroEpi;
-
 		otroEpi = laMejorTemporada.getEpisodio(3);
-
 		otroEpi.reproducir();
 
 	}
 
+	public static void iniciarCatalogo() {
+		System.out.println("Iniciando Catalogo....");
+	}
+
 }
+
+
