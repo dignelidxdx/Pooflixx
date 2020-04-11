@@ -12,16 +12,24 @@ package app;
  * 
  */
 
-
 public class Pelicula extends Film {
 
 	
+	public Pelicula(String titulo, int duracion, int anio){
+		super(titulo, duracion);
+	}
 	
-	public boolean filmadaEnImax;
+	private boolean filmadaEnImax;
+	public boolean getFilmadaEnImax(){
+		return filmadaEnImax;
+	}
+	public void setFilmadaEnImax(boolean filmadaEnImax){
+		this.filmadaEnImax = filmadaEnImax;
+	}
 	
 
 	public void reproducir(){
-		System.out.println("Reproduciendo la pelicula: " + super.titulo + " Interpretado por: " + super.actores);
+		System.out.println("Reproduciendo la pelicula: " + getTitulo() + " Interpretado por: " + super.actores);
 
 	}
 }

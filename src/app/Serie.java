@@ -5,7 +5,19 @@ import java.util.List;
 
 public class Serie extends Film {
 
-    public int numero;
+
+    public Serie(String titulo, int duracion) {
+        super(titulo, duracion);
+        // TODO Auto-generated constructor stub
+    }
+
+    private int numero;
+    public int getNumero() {
+        return numero;
+    }
+    public void setNumero(int numero){
+        this.numero = numero;
+    }
     
 
     
@@ -14,7 +26,7 @@ public class Serie extends Film {
     public Temporada getTemporada(int numero) {
 
         for (Temporada tempo : this.temporadas) {
-			if (tempo.numero == numero) {
+			if (tempo.getNumero() == numero) {
                 return tempo;
             }
 				

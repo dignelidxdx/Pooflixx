@@ -16,18 +16,69 @@ import java.util.List;
  */
 
 public class Film {
-
-    
-	public String titulo;
-	public String genero;
-	public String director;
-	public int duracion;
-	public short anio;
-    public boolean viewed;
 	
 	public List<String> premios = new ArrayList<>();
 	public List<Genero> generos = new ArrayList<>();
 	public List<Actor> actores = new ArrayList<>();
+
+	
+	public Film(String titulo, int duracion) {
+		this.titulo = titulo;
+		this.duracion = duracion;
+	}
+
+
+
+	private String titulo;
+
+	public String getTitulo(){
+		return titulo;
+	}
+	public void setTitulo(String titulo){
+		this.titulo = titulo;
+	}
+
+	private String genero;
+
+	public String getGenero(){
+		return genero;
+	}
+	public void setGenero(String genero){
+		this.genero = genero;	
+	}
+
+	private String director;
+	public String getDirector(){
+		return director;
+	}
+	public void setDirector(String director){
+		this.director = director;
+	}
+
+	private int duracion;
+	public int getDuracion(){
+		return duracion;
+	}
+	public void setDuracion(int duracion){
+		this.duracion = duracion;
+	}
+
+	private int anio;
+	public int getAnio(){
+		return anio;
+	}
+	public void setAnio(int anio){
+		this.anio = anio;
+	}
+
+	private boolean viewed;
+	public boolean getViewed(){
+		return viewed;
+	}
+	public void setViewed(boolean viewed){
+		this.viewed = viewed;
+	}
+
 
 	public Actor getActores(int numero) {
 		for (Actor act : this.actores) {

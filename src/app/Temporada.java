@@ -8,17 +8,47 @@ import java.util.List;
  */
 public class Temporada {
 
-    public int numero;
-    public String name;
-    public int cantSeries;
+    
     public List<Capitulo> capitulos = new ArrayList<>();
     public List<Serie> series1 = new ArrayList<>();
+
+    public Temporada(int numero, String name){
+        this.numero = numero;
+        this.name = name;
+    }
+    public Temporada(int numero){
+        this.numero = numero;
+    }
+
+    private int numero;
+    public int getNumero(){
+        return numero;
+    }
+    public void setNumero(int numero){
+        this.numero = numero;
+    }
+
+    private String name;
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+
+    private int cantSeries;
+    public int getCantSeries(){
+        return cantSeries;
+    }
+    public void setCantSeries(int cantSeries){
+        this.cantSeries = cantSeries;
+    }
 
 
 
     public Capitulo getEpisodio(int nro) {
         for (Capitulo c : this.capitulos) {
-			if (c.numero == nro)
+			if (c.getNumero() == nro)
 				return c;
 		}
 		
@@ -40,7 +70,7 @@ public class Temporada {
 
         int pos = 0;
         for (Capitulo epi : this.capitulos) {
-            if (epi.numero == nro) {
+            if (epi.getNumero() == nro) {
                 return pos;
             }
             pos++;

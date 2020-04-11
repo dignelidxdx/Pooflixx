@@ -26,7 +26,7 @@ public class Pooflix {
 
 	public Serie buscarSerie(String titulo) {
 		for (Serie s : this.series) {
-			if (s.titulo.equals(titulo))
+			if (s.getTitulo().equals(titulo))
 				return s;
 		}
 		
@@ -35,7 +35,7 @@ public class Pooflix {
 
 	public Pelicula buscarPelicula(String titulo){
 		for (Pelicula p: this.pelis) {
-			if (p.titulo.equals(titulo))
+			if (p.getTitulo().equals(titulo))
 				return p;
 		}
 		return null;
@@ -54,11 +54,10 @@ public class Pooflix {
 
 	private void agregar1raPelicula() {
 		
-		Pelicula elSenorDeLosAnillos = new Pelicula();
-		elSenorDeLosAnillos.titulo = "El senor de los anillos: La comunidad del anillo";
+		Pelicula elSenorDeLosAnillos = new Pelicula("El senor de los anillos: La comunidad del anillo", 160, 2003);
+
 		
-		Genero genero = new Genero();
-		genero.nombre = "fantasia";
+		Genero genero = new Genero("fantasia");
 		elSenorDeLosAnillos.generos.add(genero);
 
 		Actor actor = new Actor();
@@ -82,15 +81,12 @@ public class Pooflix {
 
 	public void agregarTheWalkingDead() {
 
-		Serie theWD = new Serie();
-		theWD.titulo = "The Walking Dead";
+		Serie theWD = new Serie("The Walking Dead", 60);
 
-		Genero generoTWD = new Genero();
-		generoTWD.nombre = "horror";
+		Genero generoTWD = new Genero("horror");
 		theWD.generos.add(generoTWD);
 
-		Temporada temp1 = new Temporada();
-		temp1.numero = 1;
+		Temporada temp1 = new Temporada(1);
 		
 		Capitulo cap1 = new Capitulo(1, "Days Gone Bye", 41);
 		temp1.capitulos.add(cap1);
@@ -100,8 +96,7 @@ public class Pooflix {
 
 		theWD.temporadas.add(temp1);
 
-		Temporada temp3 = new Temporada();
-		temp3.numero = 3;
+		Temporada temp3 = new Temporada(3);
 
 		Capitulo cap4 = new Capitulo(4, "Walk With Me", 47);
 		temp3.capitulos.add(cap4);
@@ -124,32 +119,29 @@ public class Pooflix {
 
 		theWD.temporadas.add(temp3);
 		 
-		this.series.add(theWD); 
-	
+		this.series.add(theWD); 	
 
 	}
 
 	public void agregarBreakingBAD() {
 
-		Serie breakingB = new Serie(); 
-		breakingB.titulo = "Breaking Bad";
+		Serie breakingB = new Serie("Breaking Bad", 45); 
+	
 
-		Genero genero = new Genero(); 
-		genero.nombre = "Drama"; 
+		Genero genero = new Genero("Drama"); 
 		breakingB.generos.add(genero); 
 
-		Temporada t5 = new Temporada(); 
-		t5.numero = 5; 
+		Temporada t5 = new Temporada(5);
 
 		Capitulo ep = new Capitulo(); 
-		ep.numero = 7; 
-		ep.nombre = "Say my name"; 
-		ep.duracion = 43;
+		ep.setNumero(7);
+		ep.setNombre("Say my name");
+		ep.setDuracion(43);
 		t5.capitulos.add(ep); 
 
 		Capitulo epOtro = new Capitulo(); 
-		epOtro.numero = 5; 
-		epOtro.nombre = "Ozymandias"; 
+		epOtro.setNumero(5);
+		epOtro.setNombre("Ozymandias"); 
 		epOtro.duracion = 41; 
 		t5.capitulos.add(epOtro); 
 
